@@ -28,8 +28,21 @@ module Authentication
     end
   end
   
+  def require_admin_user
+    if !current_user || (current_user && !current_user.is_admin?)
+      store_location
+      #flash[:notice] = "You must be logged in to access this page"
+      if current_user
+        redirect_to signin_path
+      else
+        redirect_to root_url
+      end
+      return false
+    end
+  end
+  
   def store_location
-    session[:return_to] = request.request_uri
+    session[:return_to] = request.fullpath
   end
   
   def redirect_back_or_default(default)

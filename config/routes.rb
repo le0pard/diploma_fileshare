@@ -26,7 +26,7 @@ RailsShop::Application.routes.draw do
     match "edit_password_resets/:perishable_token" => "password_resets#update", :as => "edit_password_resets", :via => :put
   end
   
-  root :to => "admin/catalog#index"
+  root :to => "user/users#new"
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

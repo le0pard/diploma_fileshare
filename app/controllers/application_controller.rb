@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery
   
-  helper_method :current_user_session, :current_user
+  helper_method :current_user_session, :current_user, :require_admin_user
   
   # global errors begin
   rescue_from CanCan::AccessDenied do |exception|
