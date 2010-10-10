@@ -32,7 +32,7 @@ class Admin::CatalogController < Admin::BaseController
       flash[:notice] = I18n.t("admin.catalog.flash.add_notice")
       redirect_to :action => 'edit', :id => @catalog.id
     else
-      @parent_id = parent_catalog.id if defined?(parent_catalog)
+      @parent_id = parent_catalog.id if defined?(parent_catalog) && !parent_catalog.nil?
       render :action => 'new'
     end
   end
