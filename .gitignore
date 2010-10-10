@@ -1,0 +1,15 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+.DS_Store
+public/system
+db/schema.rb
+config/database.yml
+.loadpath
+.project
+Thumbs.db
+*.orig
+.rspec
+ext_libs/*
+.externalToolBuilders/*

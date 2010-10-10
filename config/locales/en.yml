@@ -1,0 +1,79 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  flash:
+    loading: Loading...
+    access_denied: Access denied.
+    invalid_authtoken: Your session has expired.
+  admin:
+    catalog:
+      title: Catalog
+      add_root: Add root catalog
+      add_sub: Add subcatalog
+      add_parent_select: Parent catalog
+      add_button: Add catalog
+      edit_title: Edit catalog
+      edit_button: Edit catalog
+      delete_button: Delete
+      delete_confirm: Are you sure?
+      attributes:
+        title: Title
+        description: Description
+        meta_title: Meta title
+        meta_description: Meta description
+        icon: Icon
+        icon_delete: Delete Icon
+      flash:
+        add_notice: Successfully added catalog
+        delete_notice: Successfully deleted        
+
+  user:
+    register_title: Register
+    register_button: Register
+    signin_title: Login
+    signin_button: Login
+    forgot_password: Forgot Password
+    forgot_password_button: Reset my password
+    change_password_title: Change My Password
+    change_password_button: Update my password and log me in
+    attributes:
+      email: Email
+      password: Password
+      password_confirmation: Repeat password
+      remember_me: Remember me
+    flash:
+      forgot_password_notice: Instructions to reset your password have been emailed to you. Please check your email.
+      forgot_password_error: No user was found with that email address
+      edit_password_resets_notice: Password successfully updated
+      edit_password_resets_not_found: |-
+        We're sorry, but we could not locate your account. 
+        If you are having issues try copying and pasting the URL 
+        from your email into your browser or restarting the 
+        reset password process.
+  
+  emails:
+    deliver_password_reset_instructions:
+      subject: Password Reset Instructions
+      body: |-
+        Hello %{email}, 
+        A request to reset your password has been made.
+        If you did not make this request, simply ignore this email.
+        If you did make this request just click the link below:
+        %{password_reset_url}
+        If the above URL does not work try copying and pasting it into your browser.
+        If you continue to have problem please feel free to contact us.
+        
+# validation messages
+  activerecord:
+    errors:
+      models:
+        catalog:
+          attributes:
+            title:
+              blank: Title can't be blank
+              taken: Has already been taken
+            meta_title:
+              blank: Meta title can't be blank
+            meta_description:
+              too_long: Is too long (maximum is %{count} characters)

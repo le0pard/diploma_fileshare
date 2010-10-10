@@ -1,0 +1,11 @@
+<h1><%=t("user.forgot_password")%></h1>
+
+<%= form_tag password_resets_path do %>
+  <div class="line">
+    <%= label_tag :email, t("user.attributes.email")%>
+    <%= text_field_tag :email %>
+  </div>
+  <div class="line submit">
+    <%= submit_tag t("user.forgot_password_button") %>
+  </div>
+<% end %>

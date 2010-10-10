@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<project name="JS yuicompress lib" default="build-lib" basedir=".">
+	
+	<property name="src_js.dir" value="./public/javascripts/src"/>
+	<property name="vendor_js.dir" value="./public/javascripts/vendor"/>
+	<property name="dest_js.dir" value="./public/javascripts"/>
+	<property name="src_css.dir" value="./public/stylesheets/src"/>
+  <property name="vendor_css.dir" value="./public/stylesheets/vendor"/>
+	<property name="dest_css.dir" value="./public/stylesheets"/>
+
+	<taskdef name="yuicompress" classname="com.yahoo.platform.yui.compressor.YUICompressTask">
+		<classpath>
+			<fileset dir="/home/leo/programs/projects3/rails_shop/ext_libs/yui">
+				<include name="*.jar"/>
+			</fileset>
+		</classpath>
+	</taskdef>
+	
+	<target name="build-lib" depends="minify-js, minify-css, concat-js-files, concat-css-files">
+		<echo>Done.</echo>
+	</target>
+		
+	<target name="concat-js-files">
+		<echo>Concatenating js files</echo>
+		<concat destfile="${dest_js.dir}/main.js">
+			<filelist dir="${dest_js.dir}">
+<!--
+				<file name="application.js" />
+-->
+			</filelist>
+		</concat>
+		<concat destfile="${dest_js.dir}/vendor_main.js">
+      <filelist dir="${vendor_js.dir}">
+        <file name="jquery-1.4.2.min.js" />
+        <file name="rails.js" />
+        <file name="jquery-ui-1.8.5.custom.min.js" />
+        <file name="jquery.cookie.js" />
+        <file name="jquery.jstree.js" />
+      </filelist>
+    </concat>
+	</target>
+	
+	<target name="concat-css-files">
+			<echo>Concatenating css files</echo>
+			<concat destfile="${dest_css.dir}/main.css">
+				<filelist dir="${dest_css.dir}">
+<!--
+        <file name="application.css" />
+-->
+				</filelist>
+			</concat>
+	    <concat destfile="${dest_css.dir}/vendor_main.css">
+        <filelist dir="${vendor_css.dir}">
+          <file name="reset.css" />
+          <file name="template.css" />
+        </filelist>
+      </concat>
+		</target>
+
+	<target name="minify-js">
+		<echo>Minifying js files</echo>
+		<yuicompress munge="yes" warn="false" linebreak="5000" preserveallsemicolons="yes" outputfolder="${dest_js.dir}">
+			<fileset dir="${src_js.dir}">
+				<include name="*.js"/>
+			</fileset>
+		</yuicompress>
+	</target>
+	
+	<target name="minify-css">
+		<echo>Minifying css files</echo>
+		<yuicompress munge="yes" warn="false" linebreak="5000" preserveallsemicolons="yes" outputfolder="${dest_css.dir}">
+			<fileset dir="${src_css.dir}">
+				<include name="*.css"/>
+			</fileset>
+		</yuicompress>
+	</target>
+	
+</project>

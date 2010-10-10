@@ -1,0 +1,9 @@
+<h1><%=t("user.register_title")%></h1>
+
+<%= form_for @user, :url => signup_path do |f| %>
+  <%= f.error_message_on :base %>
+  <%= render :partial => "form", :object => f %>
+  <div class="line submit">
+    <%= f.submit t("user.register_button") %>
+  </div>
+<% end %>
