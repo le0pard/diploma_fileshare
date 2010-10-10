@@ -26,6 +26,8 @@ class User < ActiveRecord::Base
   end
   easy_roles :roles
   
+  has_many :uploaded_files
+  
   
   
   

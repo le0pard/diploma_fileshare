@@ -7,28 +7,24 @@ gem 'rails', '3.0.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'mysql'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'pg'
 gem 'authlogic', :git => 'git://github.com/binarylogic/authlogic.git'
 gem 'cancan'
 gem 'will_paginate'
 gem 'rubyzip'
-gem 'activemerchant'
 gem 'fastercsv'
 gem 'russian'
 gem 'nested_set'
-gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip'
+gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
+gem 'thinking-sphinx', :git => 'git://github.com/freelancing-god/thinking-sphinx.git', :branch  => 'rails3', :require => 'thinking_sphinx'
+gem 'rmagick', :require => 'RMagick'
+gem "json"
 
-
-if RUBY_PLATFORM == 'java'
-  gem 'rmagick4j', :require => 'RMagick'
-  gem "json-jruby", :require => 'json'
-else
-  gem 'rmagick', :require => 'RMagick'
-  gem "json"
-end
 
 group :development, :test do
+   gem 'capistrano'
    gem 'webrat'
    gem 'cucumber'
    gem 'cucumber-rails'

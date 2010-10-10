@@ -1,6 +1,7 @@
 .bundle
 db/*.sqlite3
 log/*.log
+log/*.pid
 tmp/**/*
 .DS_Store
 public/system
@@ -13,3 +14,5 @@ Thumbs.db
 .rspec
 ext_libs/*
 .externalToolBuilders/*
+db/sphinx/*
+config/*.sphinx.conf
