@@ -14,7 +14,7 @@ LeoAdminShop = {
     });
   },
   init_catalog_links: function(){
-    if ($('#add_root_catalog').length == 0) return nil;
+    if ($('#add_root_catalog').length == 0) return false;
     
     $('#add_root_catalog').bind('click', function(event){
       $('#content').load(LessJsRoutes.new_admin_catalog_path());
@@ -33,7 +33,7 @@ LeoAdminShop = {
     
   },
   init_catalog_tree : function(){
-    if ($('#catalog_tree').length == 0) return nil;
+    if ($('#catalog_tree').length == 0) return false;
     
       $("#catalog_tree").jstree({
       "html_data" : {

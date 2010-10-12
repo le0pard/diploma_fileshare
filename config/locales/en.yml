@@ -26,7 +26,28 @@ en:
         icon_delete: Delete Icon
       flash:
         add_notice: Successfully added catalog
-        delete_notice: Successfully deleted        
+        delete_notice: Successfully deleted    
+    
+    uploaded_file:
+      title: Uploaded files
+      panel: Panel
+      attributes:
+        id: ID
+        title: Title
+        is_public: Public?
+        is_public_yes: "Yes"
+        is_public_no: "No"
+        is_autorization: Is need autorization?
+        is_autorization_yes: "Yes"
+        is_autorization_no: "No"
+        created_at: Created at
+        updated_at: Updated at
+        attachment_updated_at: Updated file
+        
+    user:
+      attributes:
+        email: Email
+            
 
   user:
     register_title: Register

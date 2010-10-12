@@ -8,7 +8,8 @@ RailsShop::Application.routes.draw do
         get 'tree'
         get 'move'
       end
-    end  
+    end
+    resources :uploaded_files
   end
 
   namespace :user, :as => '', :path => "/" do

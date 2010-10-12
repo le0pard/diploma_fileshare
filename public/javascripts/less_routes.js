@@ -68,6 +68,41 @@ LessJsRoutes = {
     return path.replace(/\.$/m, '');
   },
   
+  // new_admin_uploaded_file => /admin/uploaded_files/new(.:format)
+  new_admin_uploaded_file_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/uploaded_files/new.' + format + '');},
+  new_admin_uploaded_file_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/uploaded_files/new.' + format + ''), verb, params, options);},
+  new_admin_uploaded_file_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/uploaded_files/new.' + format + ''), verb, params, options);},
+  
+  // admin_uploaded_files => /admin/uploaded_files(.:format)
+  admin_uploaded_files_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/uploaded_files.' + format + '');},
+  admin_uploaded_files_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/uploaded_files.' + format + ''), verb, params, options);},
+  admin_uploaded_files_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/uploaded_files.' + format + ''), verb, params, options);},
+  
+  // password_resets => /password_resets(.:format)
+  password_resets_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/password_resets.' + format + '');},
+  password_resets_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/password_resets.' + format + ''), verb, params, options);},
+  password_resets_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/password_resets.' + format + ''), verb, params, options);},
+  
+  // admin_catalog => /admin/catalog/:id(.:format)
+  admin_catalog_path: function(id, format, verb){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/catalog/' + id + '.' + format + '');},
+  admin_catalog_ajax: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/catalog/' + id + '.' + format + ''), verb, params, options);},
+  admin_catalog_ajaxx: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/catalog/' + id + '.' + format + ''), verb, params, options);},
+  
+  // tree_admin_catalog_index => /admin/catalog/tree(.:format)
+  tree_admin_catalog_index_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/catalog/tree.' + format + '');},
+  tree_admin_catalog_index_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/catalog/tree.' + format + ''), verb, params, options);},
+  tree_admin_catalog_index_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/catalog/tree.' + format + ''), verb, params, options);},
+  
+  // edit_password_resets => /edit_password_resets/:perishable_token(.:format)
+  edit_password_resets_path: function(perishable_token, format, verb){ perishable_token = LessJsRoutes.less_check_parameter(perishable_token);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/edit_password_resets/' + perishable_token + '.' + format + '');},
+  edit_password_resets_ajax: function(perishable_token, format, verb, params, options){ perishable_token = LessJsRoutes.less_check_parameter(perishable_token);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/edit_password_resets/' + perishable_token + '.' + format + ''), verb, params, options);},
+  edit_password_resets_ajaxx: function(perishable_token, format, verb, params, options){ perishable_token = LessJsRoutes.less_check_parameter(perishable_token);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/edit_password_resets/' + perishable_token + '.' + format + ''), verb, params, options);},
+  
+  // edit_admin_catalog => /admin/catalog/:id/edit(.:format)
+  edit_admin_catalog_path: function(id, format, verb){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/catalog/' + id + '/edit.' + format + '');},
+  edit_admin_catalog_ajax: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/catalog/' + id + '/edit.' + format + ''), verb, params, options);},
+  edit_admin_catalog_ajaxx: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/catalog/' + id + '/edit.' + format + ''), verb, params, options);},
+  
   // new_admin_catalog => /admin/catalog/new(.:format)
   new_admin_catalog_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/catalog/new.' + format + '');},
   new_admin_catalog_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/catalog/new.' + format + ''), verb, params, options);},
@@ -78,21 +113,6 @@ LessJsRoutes = {
   admin_catalog_index_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/catalog.' + format + ''), verb, params, options);},
   admin_catalog_index_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/catalog.' + format + ''), verb, params, options);},
   
-  // password_resets => /password_resets(.:format)
-  password_resets_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/password_resets.' + format + '');},
-  password_resets_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/password_resets.' + format + ''), verb, params, options);},
-  password_resets_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/password_resets.' + format + ''), verb, params, options);},
-  
-  // move_admin_catalog_index => /admin/catalog/move(.:format)
-  move_admin_catalog_index_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/catalog/move.' + format + '');},
-  move_admin_catalog_index_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/catalog/move.' + format + ''), verb, params, options);},
-  move_admin_catalog_index_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/catalog/move.' + format + ''), verb, params, options);},
-  
-  // edit_password_resets => /edit_password_resets/:perishable_token(.:format)
-  edit_password_resets_path: function(perishable_token, format, verb){ perishable_token = LessJsRoutes.less_check_parameter(perishable_token);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/edit_password_resets/' + perishable_token + '.' + format + '');},
-  edit_password_resets_ajax: function(perishable_token, format, verb, params, options){ perishable_token = LessJsRoutes.less_check_parameter(perishable_token);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/edit_password_resets/' + perishable_token + '.' + format + ''), verb, params, options);},
-  edit_password_resets_ajaxx: function(perishable_token, format, verb, params, options){ perishable_token = LessJsRoutes.less_check_parameter(perishable_token);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/edit_password_resets/' + perishable_token + '.' + format + ''), verb, params, options);},
-  
   // root => /(.:format)
   root_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/.' + format + '');},
   root_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/.' + format + ''), verb, params, options);},
@@ -102,6 +122,11 @@ LessJsRoutes = {
   signup_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/signup.' + format + '');},
   signup_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/signup.' + format + ''), verb, params, options);},
   signup_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/signup.' + format + ''), verb, params, options);},
+  
+  // move_admin_catalog_index => /admin/catalog/move(.:format)
+  move_admin_catalog_index_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/catalog/move.' + format + '');},
+  move_admin_catalog_index_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/catalog/move.' + format + ''), verb, params, options);},
+  move_admin_catalog_index_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/catalog/move.' + format + ''), verb, params, options);},
   
   // logout => /logout(.:format)
   logout_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/logout.' + format + '');},
@@ -123,19 +148,14 @@ LessJsRoutes = {
   signin_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/signin.' + format + ''), verb, params, options);},
   signin_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/signin.' + format + ''), verb, params, options);},
   
-  // admin_catalog => /admin/catalog/:id(.:format)
-  admin_catalog_path: function(id, format, verb){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/catalog/' + id + '.' + format + '');},
-  admin_catalog_ajax: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/catalog/' + id + '.' + format + ''), verb, params, options);},
-  admin_catalog_ajaxx: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/catalog/' + id + '.' + format + ''), verb, params, options);},
+  // admin_uploaded_file => /admin/uploaded_files/:id(.:format)
+  admin_uploaded_file_path: function(id, format, verb){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/uploaded_files/' + id + '.' + format + '');},
+  admin_uploaded_file_ajax: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/uploaded_files/' + id + '.' + format + ''), verb, params, options);},
+  admin_uploaded_file_ajaxx: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/uploaded_files/' + id + '.' + format + ''), verb, params, options);},
   
-  // tree_admin_catalog_index => /admin/catalog/tree(.:format)
-  tree_admin_catalog_index_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/catalog/tree.' + format + '');},
-  tree_admin_catalog_index_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/catalog/tree.' + format + ''), verb, params, options);},
-  tree_admin_catalog_index_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/catalog/tree.' + format + ''), verb, params, options);},
-  
-  // edit_admin_catalog => /admin/catalog/:id/edit(.:format)
-  edit_admin_catalog_path: function(id, format, verb){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/catalog/' + id + '/edit.' + format + '');},
-  edit_admin_catalog_ajax: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/catalog/' + id + '/edit.' + format + ''), verb, params, options);},
-  edit_admin_catalog_ajaxx: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/catalog/' + id + '/edit.' + format + ''), verb, params, options);},
+  // edit_admin_uploaded_file => /admin/uploaded_files/:id/edit(.:format)
+  edit_admin_uploaded_file_path: function(id, format, verb){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/uploaded_files/' + id + '/edit.' + format + '');},
+  edit_admin_uploaded_file_ajax: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/uploaded_files/' + id + '/edit.' + format + ''), verb, params, options);},
+  edit_admin_uploaded_file_ajaxx: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/uploaded_files/' + id + '/edit.' + format + ''), verb, params, options);},
 
 }
