@@ -1,7 +1,7 @@
 class Admin::UploadedFilesController < Admin::BaseController
   
   def index
-    @uploaded_files = UploadedFile.admin.paginate :page => (params[:page] || 1)
+    @uploaded_files = UploadedFile.admin.paginate :page => (params[:page] || 1), :per_page => 100
   end
   
   def new

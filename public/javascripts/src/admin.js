@@ -5,6 +5,16 @@ LeoAdminShop = {
     this.init_global_ajax();
     this.init_catalog_tree();
     this.init_catalog_links();
+    this.init_check_all();
+  },
+  init_check_all: function(){
+    if ($('#checkboxall').length == 0) return false;
+    $("#checkboxall").click(function() {
+      var checked_status = this.checked;
+      $("input.action_checkbox").each(function(){
+        this.checked = checked_status;
+      });
+    });
   },
   init_global_ajax: function(){
     $("#loading").bind("ajaxSend", function(){

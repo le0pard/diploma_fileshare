@@ -54,10 +54,6 @@ class UploadedFile < ActiveRecord::Base
   scope :admin, order("uploaded_files.attachment_updated_at")
 
   
-  def self.per_page
-    100
-  end
-  
   def is_public_text
     self.is_public ? I18n.t("admin.uploaded_file.attributes.is_public_yes") : I18n.t("admin.uploaded_file.attributes.is_public_no")
   end
