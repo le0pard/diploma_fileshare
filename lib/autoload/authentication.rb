@@ -32,7 +32,7 @@ module Authentication
     if !current_user || (current_user && !current_user.is_admin?)
       store_location
       #flash[:notice] = "You must be logged in to access this page"
-      if current_user
+      unless current_user
         redirect_to signin_path
       else
         redirect_to root_url

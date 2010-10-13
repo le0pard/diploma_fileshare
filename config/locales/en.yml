@@ -31,9 +31,16 @@ en:
     uploaded_file:
       title: Uploaded files
       panel: Panel
+      add_title: Add file
+      add_button: Add file
+      edit_title: Edit
+      delete_title: Delete
       attributes:
         id: ID
         title: Title
+        description: Description
+        meta_title: Meta title
+        meta_description: Meta description
         is_public: Public?
         is_public_yes: "Yes"
         is_public_no: "No"
@@ -42,7 +49,16 @@ en:
         is_autorization_no: "No"
         created_at: Created at
         updated_at: Updated at
+        attachment: File
         attachment_updated_at: Updated file
+        attachment_delete: Delete file
+        catalog_title: Catalog title
+      errors:
+        validates_attachment_presence: File must be set
+        validates_attachment_content_type: File must be image
+        validates_attachment_size: Max size - 15 Mb
+      flash:
+        add_notice: File successfully added
         
     user:
       attributes:

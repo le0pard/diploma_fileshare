@@ -211,3 +211,8 @@ table.admin th {
 table.admin th.actions {
   width: 130px;
 }
+
+
+.admin_left_panel{
+  margin:0 10px;
+}

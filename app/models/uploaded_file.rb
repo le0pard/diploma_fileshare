@@ -23,6 +23,12 @@ class UploadedFile < ActiveRecord::Base
   belongs_to :catalog
   
   validates :title, :presence => true
+  validates :description, :presence => true
+  validates_attachment_presence :attachment, :message => I18n.t("admin.uploaded_file.errors.validates_attachment_presence")
+  validates_attachment_content_type :attachment, 
+    :content_type=>['image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/jpg'], 
+    :message => I18n.t("admin.uploaded_file.errors.validates_attachment_content_type")
+  validates_attachment_size :attachment, :less_than => 15.megabyte, :message => I18n.t("admin.uploaded_file.errors.validates_attachment_size")
   
   has_attached_file :attachment, 
                     :styles => { :medium => "300x300>",
