@@ -29,12 +29,16 @@ en:
         delete_notice: Successfully deleted    
     
     uploaded_file:
+      list: List
       title: Uploaded files
       panel: Panel
       add_title: Add file
       add_button: Add file
       edit_title: Edit
+      edit_button: Edit
       delete_title: Delete
+      delete_button: Delete
+      delete_confirm: Are you sure?
       attributes:
         id: ID
         title: Title

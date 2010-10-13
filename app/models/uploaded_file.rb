@@ -32,7 +32,8 @@ class UploadedFile < ActiveRecord::Base
   
   has_attached_file :attachment, 
                     :styles => { :medium => "300x300>",
-                                 :thumb => "100x100>" }
+                                 :thumb => "100x100>",
+                                 :large => "800x800>" }
   
   define_index do
     # fields

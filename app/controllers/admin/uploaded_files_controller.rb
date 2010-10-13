@@ -24,6 +24,15 @@ class Admin::UploadedFilesController < Admin::BaseController
     @uploaded_file = UploadedFile.find(params[:id])
   end
   
+  def update
+    @uploaded_file = UploadedFile.find(params[:id])
+    if @uploaded_file.update_attributes(params[:uploaded_file])
+      redirect_to :action => :edit, :id => @uploaded_file.id
+    else
+      render :action => :edit
+    end
+  end
+  
   def destroy
     @uploaded_file = UploadedFile.find(params[:id])
     @uploaded_file.destroy
