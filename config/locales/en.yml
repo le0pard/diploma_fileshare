@@ -71,8 +71,21 @@ en:
         add_notice: File successfully added
         
     user:
+      title: Users
+      panel: Panel
+      list: List
+      add_title: Add user
+      add_button: Add user
+      edit_title: Edit
+      edit_button: Edit
+      delete_title: Delete
+      delete_button: Delete
+      delete_confirm: Are you sure?
       attributes:
+        id: ID
         email: Email
+        created_at: Created at
+        updated_at: Updated at
             
 
   user:

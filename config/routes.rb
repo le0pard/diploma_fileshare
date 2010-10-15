@@ -14,6 +14,8 @@ RailsShop::Application.routes.draw do
         post 'bulk'
       end
     end
+    resources :users
+    root :to => "uploaded_files#index"
   end
 
   namespace :user, :as => '', :path => "/" do

@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   
   has_many :uploaded_files
   
-  
+  scope :admin, order("users.created_at DESC")
   
   
   def deliver_password_reset_instructions!  
