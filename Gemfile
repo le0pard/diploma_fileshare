@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 source 'http://gems.github.com'
 source :gemcutter
 
-gem 'rails', '3.0.0'
+gem 'rails', '3.0.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -30,7 +30,7 @@ group :development, :test do
    gem 'cucumber-rails'
 #   gem 'thoughtbot-factory_girl', :require => "factory_girl"
    gem 'rspec', '>= 1.3.0'
-   gem 'rspec-rails', "2.0.0.beta.22", :git => "git://github.com/rspec/rspec-rails.git", :tag => "v2.0.0.beta.22"
+   gem 'rspec-rails', ">= 2.0.1"
 #   gem 'remarkable_rails'
 #   gem 'ffaker'
    gem 'mocha'
