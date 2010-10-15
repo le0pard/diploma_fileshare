@@ -39,6 +39,12 @@ en:
       delete_title: Delete
       delete_button: Delete
       delete_confirm: Are you sure?
+      empty_catalog: "-- Select catalog --"
+      bulk_action:
+        title: Action
+        move: Move
+        delete: Delete
+        submit: Go
       attributes:
         id: ID
         title: Title

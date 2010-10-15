@@ -43,4 +43,7 @@ class Admin::UploadedFilesController < Admin::BaseController
     end
   end
   
+  def bulk_action
+  end
+  
 end

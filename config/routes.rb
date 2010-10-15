@@ -9,7 +9,11 @@ RailsShop::Application.routes.draw do
         get 'move'
       end
     end
-    resources :uploaded_files
+    resources :uploaded_files do
+      collection do 
+        post 'bulk_action'
+      end
+    end
   end
 
   namespace :user, :as => '', :path => "/" do
