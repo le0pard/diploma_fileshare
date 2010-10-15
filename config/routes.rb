@@ -11,7 +11,7 @@ RailsShop::Application.routes.draw do
     end
     resources :uploaded_files do
       collection do 
-        post 'bulk_action'
+        post 'bulk'
       end
     end
   end

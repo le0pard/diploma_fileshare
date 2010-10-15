@@ -43,7 +43,23 @@ class Admin::UploadedFilesController < Admin::BaseController
     end
   end
   
-  def bulk_action
+  def bulk
+    if params[:actions] && params[:action]
+      case params[:actions].to_i
+        when 1 
+          params[:bulk_action].each do |action_id|
+            uploaded_file = UploadedFile.find(action_id)
+            uploaded_file.destroy
+          end
+        else
+          #else
+      end      
+    end
+    begin
+      redirect_to :back
+    rescue ActionController::RedirectBackError
+      redirect_to :action => :index
+    end
   end
   
 end
