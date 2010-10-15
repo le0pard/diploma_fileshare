@@ -1,0 +1,15 @@
+<div class="line">
+  <%= form.error_message_on :email %>
+  <%= form.label :email, t("admin.user.attributes.email") %>
+  <%= form.text_field :email, :class =>'title' %>
+</div>
+<div class="line">
+  <%= form.error_message_on :password %>
+  <%= form.label :password, t("admin.user.attributes.password") %>
+  <%= form.password_field :password %>
+</div>
+<div class="line">
+  <%= form.error_message_on :password_confirmation %>
+  <%= form.label :password_confirmation, t("admin.user.attributes.password_confirmation") %>
+  <%= form.password_field :password_confirmation %>
+</div>

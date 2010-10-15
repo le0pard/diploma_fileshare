@@ -1,0 +1,16 @@
+<h2><%=t("admin.user.add_title")%></h2>
+
+<div class="admin-form">
+<%= form_for @user, :url => admin_users_path() do |f|%>
+  <%= f.error_message_on :base %>
+  <%= render :partial => 'form', :object => f %>
+  <div class="line submit">
+    <%= f.submit t("admin.user.add_button") %>
+  </div>
+<% end %>
+</div>
+
+
+<%= content_for :left_panel do %>
+  <%= render :partial => 'left_panel' %>
+<% end %>

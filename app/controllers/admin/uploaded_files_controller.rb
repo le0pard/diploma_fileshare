@@ -15,7 +15,6 @@ class Admin::UploadedFilesController < Admin::BaseController
       flash[:notice] = I18n.t("admin.uploaded_file.flash.add_notice")
       redirect_to :action => :edit, :id => @uploaded_file.id
     else
-      logger.debug @uploaded_file.errors.inspect
       render :action => :new
     end
   end
@@ -27,6 +26,7 @@ class Admin::UploadedFilesController < Admin::BaseController
   def update
     @uploaded_file = UploadedFile.find(params[:id])
     if @uploaded_file.update_attributes(params[:uploaded_file])
+      flash[:notice] = I18n.t("admin.uploaded_file.flash.update_notice")
       redirect_to :action => :edit, :id => @uploaded_file.id
     else
       render :action => :edit
@@ -36,6 +36,7 @@ class Admin::UploadedFilesController < Admin::BaseController
   def destroy
     @uploaded_file = UploadedFile.find(params[:id])
     @uploaded_file.destroy
+    flash[:notice] = I18n.t("admin.uploaded_file.flash.delete_notice")
     begin
       redirect_to :back
     rescue ActionController::RedirectBackError
@@ -51,6 +52,7 @@ class Admin::UploadedFilesController < Admin::BaseController
             uploaded_file = UploadedFile.find(action_id)
             uploaded_file.destroy
           end
+          flash[:notice] = I18n.t("admin.uploaded_file.flash.delete_notice")
         else
           #else
       end      
