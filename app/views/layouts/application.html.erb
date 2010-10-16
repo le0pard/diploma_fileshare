@@ -3,13 +3,38 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>RailsShop</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults, :cache => "cache_main" %>
+  <%= stylesheet_link_tag "vendor_main", "main", :cache => "cache" %>
+  <%= javascript_include_tag :defaults, "main", :cache => "cache" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 
-<%=yield %>
+<div class="page">
+  <div class="head">
+    <%=render :partial => "shared/header" %>
+  </div>
+  <div class="body">
+    <div class="leftCol gCal">
+      <h2>sadasd</h2>
+      <h2><a title="contact" href="http://ilovetypography.com/category/marginal-notes/">asdasdasd</a></h2>
+      <h3>asdasdasd</h3>
+      <h2>Left Column</h2>
+      <p>The right column is by default 300px wide. It can be extended via all the same classes that are available to right column.</p>
+      <ul>
+        <li>.gMail = 160px</li>
+        <li>.gCal = 180px</li>
+        <li>.yahoo = 240px</li>
+        <li>.myYahoo = 300px</li>
+      </ul>
+    </div>
+    <div class="main"> 
+      <%=yield %>
+    </div>
+  </div>
+  <div class="foot">
+    <%=render :partial => "shared/footer" %>
+  </div>
+</div>
 
 </body>
 </html>
