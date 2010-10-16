@@ -237,6 +237,26 @@ div.admin_account a:hover {
   margin:0 10px;
 }
 
+div.foot{
+  margin-top:20px;
+}
+
+div.admin_footer {
+  background: #3E995C;
+  clear:both;
+  color:#FFFFFF;
+  position:relative;
+  font-size:12px;
+}
+
+div.wrapper {
+  margin:auto;
+  max-width:1440px;
+  min-width:1000px;
+  position:relative;
+  width:98%;
+}
+
 
 /* pager */
 .digg_pagination {
