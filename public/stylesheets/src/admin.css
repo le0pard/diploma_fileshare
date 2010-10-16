@@ -74,7 +74,7 @@ div.navigation a {
 }
 
 div.navigation ul {
-  padding: 0 20px;
+  padding: 0;
 }
 
 div.navigation li {
@@ -210,6 +210,26 @@ table.admin th {
 
 table.admin th.actions {
   width: 130px;
+}
+
+
+div.admin_account {
+  height: 40px;
+  font: 14px tahoma, sans-serif;
+  float:right;
+  display: block;
+  padding: 0 10px;
+  line-height: 38px;
+  background-color: #0072ad;
+  border-right: 1px solid #02212E;
+  text-decoration: none;
+}
+div.admin_account, div.admin_account a {
+  color: #fff;
+}
+
+div.admin_account a:hover {
+  background-color: #0072ad;
 }
 
 

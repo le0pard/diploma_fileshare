@@ -4,4 +4,8 @@
     <li><%=admin_menu_link(t("admin.catalog.title"), admin_catalog_index_path)%></li>
     <li><%=admin_menu_link(t("admin.user.title"), admin_users_path)%></li>
   </ul>
+  <div class="admin_account">
+    <%=link_to t("admin.admin_account.account"), edit_admin_user_path(current_user)%> | 
+    <%=link_to t("admin.admin_account.logout"), logout_path%>
+  </div>
 </div>

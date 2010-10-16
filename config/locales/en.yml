@@ -94,6 +94,9 @@ en:
         add_notice: User successfully added
         update_notice: User successfully updated
         delete_notice: User successfully deleted
+    admin_account:
+      account: Account
+      logout: Logout
             
 
   user:
