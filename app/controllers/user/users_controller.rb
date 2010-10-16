@@ -8,7 +8,7 @@ class User::UsersController < User::BaseController
   
   def create
     @user = User.new(params[:user])
-    if @user.save
+    if verify_recaptcha(:model => @user, :message => I18n.t("user.error_verify_recaptcha")) and @user.save
       #flash[:notice] = "Account registered!"
       redirect_back_or_default account_path
     else

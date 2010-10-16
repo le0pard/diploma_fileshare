@@ -21,6 +21,7 @@ gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 gem 'thinking-sphinx', :git => 'git://github.com/freelancing-god/thinking-sphinx.git', :branch  => 'rails3', :require => 'thinking_sphinx'
 gem 'rmagick', :require => 'RMagick'
 gem "json"
+gem "recaptcha", :require => "recaptcha/rails"
 
 
 group :development, :test do

@@ -108,6 +108,7 @@ en:
     forgot_password_button: Reset my password
     change_password_title: Change My Password
     change_password_button: Update my password and log me in
+    error_verify_recaptcha: The words do not match the ones in the recaptcha image!
     attributes:
       email: Email
       password: Password

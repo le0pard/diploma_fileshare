@@ -13,3 +13,6 @@
   <%= form.label :password_confirmation, t("user.attributes.password_confirmation") %>
   <%= form.password_field :password_confirmation, :class =>'title' %>
 </div>
+<div class="line">
+  <%= raw recaptcha_tags :ajax => true %>
+</div>
