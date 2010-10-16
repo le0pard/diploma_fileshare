@@ -103,6 +103,8 @@ en:
     upload_file: Upload file
     show_all: Show all
     about: About
+  left_menu:
+    title: Categories
             
 
   user:

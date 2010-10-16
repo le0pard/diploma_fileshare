@@ -106,3 +106,20 @@ ul#main-nav li.last a, ul#nav-main li.last a:visited {
   padding:5px;
   font-size: 0.8em;
 }
+
+
+#catalog {
+  margin: 5px;
+}
+
+#catalog ul {
+  list-style:none outside none;
+  margin:0;
+}
+
+#catalog ul li {
+  border-bottom:1px dotted #DEDEDE;
+  color:#F49300;
+  line-height:1.2em;
+  padding:4px 0;
+}
