@@ -1,5 +1,5 @@
 body{
-  font-family:"Myriad Pro","Segoe UI",Helvetica, Arial, sans-serif;
+  font-family: "Georgia", sans-serif;
   background-color:#F4EBDF;
   border-top:6px solid #F0B965;
   font-size:16px;
@@ -84,6 +84,16 @@ ul#main-nav li a small {
   font:lighter 10px/1 "ff-scala-sans-web-1","ff-scala-sans-web-2","Lucida Grande",Helvetica,sans-serif;
   letter-spacing:1px;
   text-transform:uppercase;
+}
+
+ul#main-nav li a small.active {
+  font-weight:bold;
+}
+
+ul#main-nav li.last a, ul#nav-main li.last a:visited {
+  border:0 none;
+  color:#666666;
+  float:right;
 }
 
 #footer {

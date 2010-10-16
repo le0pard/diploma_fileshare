@@ -97,6 +97,12 @@ en:
     admin_account:
       account: Account
       logout: Logout
+
+  navigation:
+    home: Home
+    upload_file: Upload file
+    show_all: Show all
+    about: About
             
 
   user:
