@@ -1,5 +1,7 @@
 class Site::FilesController < Site::BaseController
   
+  before_filter :require_user, :only => [:create]
+  
   def index
     @uploaded_file = UploadedFile.new
     @uploaded_files = UploadedFile.published.limit("30").all
