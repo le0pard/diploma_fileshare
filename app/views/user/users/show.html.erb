@@ -1,36 +1,12 @@
 <h2><%=t("navigation.account")%></h2>
+<div>
+  <%=t("admin.user.attributes.email")%>: <%=@user.email%>
+</div>
 
-<p>
-  <b>Email:</b>
-  <%=@user.email %>
-</p>
+<div class="divider"></div>
 
-<p>
-  <b>Login count:</b>
-  <%=h @user.login_count %>
-</p>
+<h2><%=t("texts.user_images")%></h2>
+<div class="images_list">
+  <%=render :partial => "site/files/image", :collection => @user.uploaded_files.account %>
+</div>
 
-<p>
-  <b>Last request at:</b>
-  <%=h @user.last_request_at %>
-</p>
-
-<p>
-  <b>Last login at:</b>
-  <%=h @user.last_login_at %>
-</p>
-
-<p>
-  <b>Current login at:</b>
-  <%=h @user.current_login_at %>
-</p>
-
-<p>
-  <b>Last login ip:</b>
-  <%=h @user.last_login_ip %>
-</p>
-
-<p>
-  <b>Current login ip:</b>
-  <%=h @user.current_login_ip %>
-</p>

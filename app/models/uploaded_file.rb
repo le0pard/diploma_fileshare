@@ -51,6 +51,9 @@ class UploadedFile < ActiveRecord::Base
     where "is_public = 1"
   end
   
+  scope :account, lambda { 
+    order("uploaded_files.attachment_updated_at DESC")
+  }
   scope :published, lambda { 
     where({:is_public => true}).order("uploaded_files.attachment_updated_at DESC")
   }

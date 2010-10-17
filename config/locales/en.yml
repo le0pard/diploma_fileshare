@@ -119,6 +119,7 @@ en:
     search_button: Search
     catalog_title: Category
     search_title: Search results
+    user_images: User images
   flash:
     upload_notice: File successfully uploaded
             
