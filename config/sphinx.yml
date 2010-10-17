@@ -1,0 +1,10 @@
+development: &development
+  mem_limit: 128M
+  morphology: stem_en, stem_ru
+  max_matches: 10000
+  
+  
+test:
+  <<: *development
+production:
+  <<: *development
