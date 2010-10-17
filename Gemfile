@@ -22,6 +22,7 @@ gem 'thinking-sphinx', :git => 'git://github.com/freelancing-god/thinking-sphinx
 gem 'rmagick', :require => 'RMagick'
 gem "json"
 gem "recaptcha", :require => "recaptcha/rails"
+gem 'memcache'
 
 
 group :development, :test do

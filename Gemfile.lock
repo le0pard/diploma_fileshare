@@ -93,6 +93,7 @@ GEM
       activesupport (>= 2.3.6)
       mime-types
       treetop (>= 1.4.5)
+    memcache (1.2.13)
     mime-types (1.16)
     mocha (0.9.8)
       rake
@@ -169,6 +170,7 @@ DEPENDENCIES
   cucumber-rails
   fastercsv
   json
+  memcache
   mocha
   mysql
   nested_set
