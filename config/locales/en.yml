@@ -6,6 +6,7 @@ en:
     loading: Loading...
     access_denied: Access denied.
     invalid_authtoken: Your session has expired.
+    invalid_page_found: Page not found.
   admin:
     catalog:
       title: Catalog
@@ -116,6 +117,8 @@ en:
     image_last_updated: Last uploaded images
     search_text: Search...
     search_button: Search
+    catalog_title: Category
+    search_title: Search results
   flash:
     upload_notice: File successfully uploaded
             

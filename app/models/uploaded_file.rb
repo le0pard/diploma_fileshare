@@ -54,6 +54,9 @@ class UploadedFile < ActiveRecord::Base
   scope :published, lambda { 
     where({:is_public => true}).order("uploaded_files.attachment_updated_at DESC")
   }
+  scope :by_catalog, lambda { |catalog|
+    where({:catalog_id => catalog.id})
+  }
   scope :admin, order("uploaded_files.attachment_updated_at DESC")
 
   

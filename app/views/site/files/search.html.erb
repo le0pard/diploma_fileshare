@@ -1,0 +1,10 @@
+<h2><%=t("texts.search_title")%>: <%=params[:s]%></h2>
+<div class="images_list">
+  <%=render :partial => "image", :collection => @uploaded_files %>
+</div>
+
+<div class="divider"></div>
+
+<div class='digg_pagination'>
+  <%= will_paginate @uploaded_files %>
+</div>

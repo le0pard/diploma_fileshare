@@ -16,6 +16,9 @@ class ApplicationController < ActionController::Base
     flash[:error] = I18n.t("flash.invalid_authtoken")
     redirect_to root_url
   end
+  rescue_from WillPaginate::InvalidPage do |exception|
+    redirect_to root_url
+  end
   # global errors end
 
 

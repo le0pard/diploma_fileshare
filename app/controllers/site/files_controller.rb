@@ -22,7 +22,19 @@ class Site::FilesController < Site::BaseController
   end
   
   def search
-    
+    if params[:s]
+      @uploaded_files = UploadedFile.search params[:s], :order => :attachment_updated_at, 
+        :sort_mode => :desc, :page => (params[:page] || 1), :per_page => 60
+    else
+      redirect_to root_path
+    end
+  end
+  
+  def catalog
+    @catalog = Catalog.find_by_id_and_slug(params[:id], params[:slug])
+    redirect_to root_path if @catalog.nil?
+    @catalog_tree = @catalog.children
+    @uploaded_files = UploadedFile.published.by_catalog(@catalog).paginate :page => (params[:page] || 1), :per_page => 60
   end
   
 end

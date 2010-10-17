@@ -1,0 +1,10 @@
+<h2><%=t("texts.catalog_title")%>: <%=@catalog.title%></h2>
+<div class="images_list">
+  <%=render :partial => "image", :collection => @uploaded_files %>
+</div>
+
+<div class="divider"></div>
+
+<div class='digg_pagination'>
+  <%= will_paginate @uploaded_files %>
+</div>

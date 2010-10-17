@@ -36,6 +36,8 @@ RailsShop::Application.routes.draw do
   namespace :site, :as => '', :path => "/" do
     match "upload" => "files#create", :via => :post
     match "image/:id/:slug" => "files#show", :as => :image_link, :via => :get, :requirements => {:id => /\d+/, :slug => /(.*)/ }
+    match "catalog/:id/:slug/:page" => "files#catalog", :as => :catalog_link_page, :requirements => {:id => /\d+/, :slug => /(.*)/ }
+    match "catalog/:id/:slug" => "files#catalog", :as => :catalog_link, :via => :get, :requirements => {:id => /\d+/, :slug => /(.*)/ }
     match "search" => "files#search", :via => [:get, :post], :as => :search
   end
   
