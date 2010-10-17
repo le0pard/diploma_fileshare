@@ -17,7 +17,7 @@ $(document).ready(function() {
       $("#s").bind('blur', function(){
         if ($(this).val() == "") $(this).val($(this).attr('rel')).css("color", "#CCC");
       });
-      if ($("#s").val() == ""){
+      if ($("#s").val().length == 0){
         $(this).val($(this).attr('rel')).css("color", "#CCC");
       }
     }
