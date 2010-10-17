@@ -2,8 +2,8 @@ class UploadFileSweeper < ActionController::Caching::Sweeper
   observe UploadedFile
   
   def clear_cache(obj)
-    expire_page image_link_path(:id => obj.id, :slug => obj.slug)
     expire_fragment "image_top_list"
+    expire_fragment "image_#{obj.id}"
   end
   
   def after_save(obj)
