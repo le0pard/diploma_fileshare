@@ -13,6 +13,7 @@
     <%= render :partial => "shared/admin/header" %>
   </div>
   <div class="body">
+    <%=render :partial => "shared/flash_messages" %>
     <% if content_for?(:left_panel) %>
     <div class="leftCol myYahoo">
       <%=yield :left_panel%>

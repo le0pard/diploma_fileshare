@@ -123,3 +123,34 @@ ul#main-nav li.last a, ul#nav-main li.last a:visited {
   line-height:1.2em;
   padding:4px 0;
 }
+
+
+
+/*errors begin*/
+#information_messages{
+  clear: both;
+  margin-top: 0.2em;
+  margin-bottom: 0.3em;
+}
+
+#information_messages ul {
+  margin-bottom: 0;
+  list-style: none;
+  padding: 4px;
+}
+#information_messages ul li {
+  margin-left: 3em;
+}
+
+#information_messages ul.error {
+  border-top: 1px solid #ff0000;
+  border-bottom: 1px solid #ff0000;
+  background: #fcf6d0 url(/images/messages/error_m.gif) 1em 50% no-repeat;
+}
+
+#information_messages ul.notice {
+  border-top: 1px solid #ecd757;
+  border-bottom: 1px solid #ecd757;
+  background: #fcf6d0 url(/images/messages/notice_m.gif) 1em 50% no-repeat;
+}
+/*errors end*/
