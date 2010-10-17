@@ -2,6 +2,7 @@ class Site::FilesController < Site::BaseController
   
   before_filter :require_user, :only => [:create]
   caches_page :show
+  cache_sweeper :upload_file_sweeper, :only => [:create]
   
   def index
     @uploaded_file = UploadedFile.new
