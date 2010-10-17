@@ -120,6 +120,7 @@ en:
     catalog_title: Category
     search_title: Search results
     user_images: User images
+    private_image: Private image (not found from public catalog or search)
   flash:
     upload_notice: File successfully uploaded
             
