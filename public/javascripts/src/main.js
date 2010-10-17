@@ -18,7 +18,7 @@ $(document).ready(function() {
         if ($(this).val() == "") $(this).val($(this).attr('rel')).css("color", "#CCC");
       });
       if ($("#s").val().length == 0){
-        $(this).val($(this).attr('rel')).css("color", "#CCC");
+        $("#s").val($("#s").attr('rel')).css("color", "#CCC");
       }
     }
   }
