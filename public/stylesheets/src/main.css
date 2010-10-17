@@ -16,6 +16,17 @@ strong{font-weight:bold;}
 hr{border: 5px solid #e2e2e2; border-width: 0 0 5px 0; margin: 20px 10px 10px 10px;}
 code{color:#0B8C8F;}
 
+a img {
+  border:0;
+}
+
+.divider{
+  width:100%;
+  height:1px;
+  background:#000;
+  margin:20px 0 10px 0;
+}
+
 .important a{font-weight:bold;}/* what is this? */
 /* links */
 a {color: #555555; text-decoration: none;}
@@ -96,6 +107,26 @@ ul#main-nav li.last a, ul#nav-main li.last a:visited {
   float:right;
 }
 
+
+ul#main-nav li form {
+  color:#666666;
+  display:block;
+  float:left;
+  margin:0;
+  padding:2px 15px 13px;
+  width:auto;
+}
+
+ul#main-nav li form input.text {
+  font-size:20px;
+  width:400px;
+  color: #CCC;
+}
+
+ul#main-nav li form input.submit {
+  font-size:20px;
+}
+
 #footer {
   margin:51px auto 0;
   background-color:#000000;
@@ -125,6 +156,105 @@ ul#main-nav li.last a, ul#nav-main li.last a:visited {
 }
 
 
+
+/*admin form*/
+form input, form textarea {
+  font: 16px tahoma, sans-serif;
+}
+
+form label {
+  display: block;
+  margin-bottom: 3px;
+  color: #333;
+}
+
+form textarea {
+  padding: 5px;
+  width: 590px;
+  height: 200px;
+  font-size: 14px;
+}
+
+form .line {
+  padding: 7px 0;
+  clear: both;
+}
+
+form div.box .line.submit {
+  position: relative;
+  bottom: -60px;
+}
+
+form .line.submit input {
+  width: auto;
+  font-size: 14px;
+  padding: 3px 10px;
+}
+
+div.line.column {
+  width: 85px;
+  float: left;
+  clear: none;
+  margin-right: 40px;
+}
+
+
+
+
+div.field_with_errors input {
+    border: 1px solid #cc0000;
+    background-color: #e99;
+}
+
+.formError {
+    color: #dd0000;
+}
+
+
+/*image*/
+.image_box {
+  margin:10px 0;  
+}
+
+.image_box .image{
+  text-align: center;
+  float:left;
+  width: 300px;
+  padding:15px; 
+  border:1px solid #000;
+}
+
+.image_box .right_panel{
+  margin-left: 10px;
+  float:left;
+  width:100px;
+}
+
+.image_box .right_panel ul {
+  list-style:none outside none;
+  margin:0;
+}
+
+.image_box .right_panel ul li {
+  border-bottom:1px dotted #DEDEDE;
+  color:#F49300;
+  line-height:1.2em;
+  padding:4px 0;
+}
+
+.image_description {
+  margin:5px;
+}
+
+.image_cell{
+  text-align: center;
+  float: left;
+  width: 100px;
+  height: 100px;
+  padding: 5px; 
+  border: 1px solid #000;
+  margin: 10px;
+}
 
 /*errors begin*/
 #information_messages{

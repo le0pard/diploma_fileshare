@@ -11,7 +11,7 @@ class User::PasswordResetsController < User::BaseController
       redirect_to root_url
     else
       flash[:error] = I18n.t("user.flash.forgot_password_error")
-      render :action => :new
+      redirect_to :action => :create
     end
   end
   

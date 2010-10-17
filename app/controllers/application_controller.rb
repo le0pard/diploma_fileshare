@@ -17,11 +17,12 @@ class ApplicationController < ActionController::Base
     redirect_to root_url
   end
   # global errors end
-  
+
+
   private
   
   def get_categories
     @catalog_tree = Catalog.tree
   end
-
+  
 end

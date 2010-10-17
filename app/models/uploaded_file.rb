@@ -16,11 +16,14 @@ class UploadedFile < ActiveRecord::Base
   #   is_autorization         : boolean 
   #   created_at              : datetime 
   #   updated_at              : datetime 
+  #   slug                    : string 
   # =======================
 
   
   belongs_to :user
   belongs_to :catalog
+  
+  before_save :set_slug
   
   validates :title, :presence => true
   validates :description, :presence => true
@@ -49,9 +52,9 @@ class UploadedFile < ActiveRecord::Base
   end
   
   scope :published, lambda { 
-    where({:is_public => true}).order("uploaded_files.attachment_updated_at")
+    where({:is_public => true}).order("uploaded_files.attachment_updated_at DESC")
   }
-  scope :admin, order("uploaded_files.attachment_updated_at")
+  scope :admin, order("uploaded_files.attachment_updated_at DESC")
 
   
   def is_public_text
@@ -60,6 +63,16 @@ class UploadedFile < ActiveRecord::Base
   
   def is_autorization_text
     self.is_autorization ? I18n.t("admin.uploaded_file.attributes.is_autorization_yes") : I18n.t("admin.uploaded_file.attributes.is_autorization_no")
+  end
+  
+  private
+  
+  def set_slug
+    return nil if self.title.nil?
+    value = Russian.translit(self.title)
+    value = value.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n, '').to_s
+    value = value.gsub(/[']+/, '').gsub(/\W+/, ' ').strip.downcase.gsub(' ', '-')
+    self.slug = value
   end
 
                             

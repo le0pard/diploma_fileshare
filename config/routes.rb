@@ -33,7 +33,13 @@ RailsShop::Application.routes.draw do
     match "edit_password_resets/:perishable_token" => "password_resets#update", :as => "edit_password_resets", :via => :put
   end
   
-  root :to => "user/users#new"
+  namespace :site, :as => '', :path => "/" do
+    match "upload" => "files#create", :via => :post
+    match "image/:id/:slug" => "files#show", :as => :image_link, :via => :get, :requirements => {:id => /\d+/, :slug => /(.*)/ }
+    match "search" => "files#search", :via => [:get, :post], :as => :search
+  end
+  
+  root :to => "site/files#index"
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

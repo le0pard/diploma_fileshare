@@ -100,11 +100,24 @@ en:
 
   navigation:
     home: Home
-    upload_file: Upload file
     show_all: Show all
     about: About
+    signin: SignIn
+    signup: SignUp
+    account: Account
+    logout: Logout
   left_menu:
     title: Categories
+  texts:
+    signin: Sign In if you already have an account
+    forgot_password_text: Forgot password?
+    upload_title: Upload image
+    upload_button: Upload image
+    image_last_updated: Last uploaded images
+    search_text: Search...
+    search_button: Search
+  flash:
+    upload_notice: File successfully uploaded
             
 
   user:
