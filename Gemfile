@@ -23,6 +23,7 @@ gem 'rmagick', :require => 'RMagick'
 gem "json"
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'memcache'
+gem "memcache-client"
 
 
 group :development, :test do

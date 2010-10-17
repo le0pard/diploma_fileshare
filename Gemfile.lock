@@ -94,6 +94,7 @@ GEM
       mime-types
       treetop (>= 1.4.5)
     memcache (1.2.13)
+    memcache-client (1.8.5)
     mime-types (1.16)
     mocha (0.9.8)
       rake
@@ -171,6 +172,7 @@ DEPENDENCIES
   fastercsv
   json
   memcache
+  memcache-client
   mocha
   mysql
   nested_set
