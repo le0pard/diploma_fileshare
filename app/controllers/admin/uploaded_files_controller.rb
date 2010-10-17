@@ -1,5 +1,7 @@
 class Admin::UploadedFilesController < Admin::BaseController
   
+  cache_sweeper :upload_file_sweeper, :only => [:create, :update, :destroy]
+  
   def index
     @uploaded_files = UploadedFile.admin.paginate :page => (params[:page] || 1), :per_page => 100
   end

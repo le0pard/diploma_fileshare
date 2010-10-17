@@ -1,6 +1,7 @@
 class Site::FilesController < Site::BaseController
   
   before_filter :require_user, :only => [:create]
+  caches_page :show
   
   def index
     @uploaded_file = UploadedFile.new
