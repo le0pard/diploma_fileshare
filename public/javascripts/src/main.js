@@ -15,10 +15,10 @@ $(document).ready(function() {
         if ($(this).attr('rel') == $(this).val()) $(this).val("").css("color", "#000");
       });
       $("#s").bind('blur', function(){
-        if ($(this).val() == "") $(this).val($(this).attr('rel')).css("color", "#CCC");
+        if ($(this).val() == "") $(this).css("color", "#CCC").val($(this).attr('rel'));
       });
       if ($("#s").val().length == 0){
-        $("#s").val($("#s").attr('rel')).css("color", "#CCC");
+        $("#s").css("color", "#CCC").val($("#s").attr('rel'));
       }
     }
   }
