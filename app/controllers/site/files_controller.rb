@@ -37,6 +37,7 @@ class Site::FilesController < Site::BaseController
     @catalog = Catalog.find_by_id_and_slug(params[:id], params[:slug])
     redirect_to root_path if @catalog.nil?
     @catalog_tree = @catalog.children
+    @catalog_tree_child = true
     @uploaded_files = UploadedFile.published.by_catalog(@catalog).paginate :page => (params[:page] || 1), :per_page => 60
   end
   
