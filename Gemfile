@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 source 'http://gems.github.com'
 source :gemcutter
 
-gem 'rails', '3.0.1'
+gem 'rails', '3.0.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -10,7 +10,8 @@ gem 'rails', '3.0.1'
 gem 'mysql'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'pg'
-gem 'authlogic', :git => 'git://github.com/binarylogic/authlogic.git'
+#gem 'authlogic', :git => 'git://github.com/binarylogic/authlogic.git'
+gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "rails3"
 gem 'cancan'
 gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch  => 'rails3'
 gem 'rubyzip'
@@ -31,7 +32,7 @@ group :development, :test do
    gem 'webrat'
    gem 'cucumber'
    gem 'cucumber-rails'
-#   gem 'thoughtbot-factory_girl', :require => "factory_girl"
+   gem 'factory_girl'
    gem 'rspec', '>= 1.3.0'
    gem 'rspec-rails', ">= 2.0.1"
 #   gem 'remarkable_rails'
