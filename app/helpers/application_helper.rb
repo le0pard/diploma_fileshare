@@ -12,7 +12,7 @@ module ApplicationHelper
       
       css_class = ""
       css_class = "class='active'" if boolean_menu
-      link_to raw("<small #{css_class}>#{title}</small>"), link
+      link_to ("<small #{css_class}>#{title}</small>").html_safe, link
     end
   end
   

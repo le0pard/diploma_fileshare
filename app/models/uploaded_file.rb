@@ -17,6 +17,7 @@ class UploadedFile < ActiveRecord::Base
   #   created_at              : datetime 
   #   updated_at              : datetime 
   #   slug                    : string 
+  #   diff_array              : string 
   # =======================
 
   
@@ -37,6 +38,8 @@ class UploadedFile < ActiveRecord::Base
                     :styles => { :medium => "300x300>",
                                  :thumb => "100x100>",
                                  :large => "800x800>" }
+  
+  after_attachment_post_process :set_diff_array
   
   define_index do
     # fields
@@ -71,7 +74,13 @@ class UploadedFile < ActiveRecord::Base
     self.is_autorization ? I18n.t("admin.uploaded_file.attributes.is_autorization_yes") : I18n.t("admin.uploaded_file.attributes.is_autorization_no")
   end
   
-  private
+  def get_simillar(percent, own_limit = 10)
+    own_where = "round((icount(uploaded_files.diff_array::int[] & '#{self.diff_array}'::int[])::numeric / ((icount(uploaded_files.diff_array::int[]) + icount('#{self.diff_array}'::int[])) / 2)::numeric) * 100, 2)"
+    UploadedFile.select("uploaded_files.*, #{own_where} AS simillar_percentes").
+      where(["#{own_where} >= ? AND id != ?", percent, self.id]).limit(own_limit)
+  end
+  
+  protected
   
   def set_slug
     return nil if self.title.nil?
@@ -79,6 +88,14 @@ class UploadedFile < ActiveRecord::Base
     value = value.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n, '').to_s
     value = value.gsub(/[']+/, '').gsub(/\W+/, ' ').strip.downcase.gsub(' ', '-')
     self.slug = value
+  end
+  
+  def set_diff_array
+    if self.attachment.queued_for_write[:original].path
+      img_diff = ImageDiff.new
+      main_array = img_diff.generate_array(self.attachment.queued_for_write[:original].path)
+      self.diff_array = "{#{main_array.join(",")}}"
+    end
   end
 
                             

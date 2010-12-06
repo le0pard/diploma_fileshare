@@ -9,7 +9,7 @@ module Admin::BaseHelper
       else
         boolean_menu = (controller.controller_path == route_hash[:controller])
       end
-      link_to_unless(boolean_menu, title, link) {"<span>#{title}</span>"}
+      link_to_unless(boolean_menu, title, link) {"<span>#{title}</span>".html_safe}
     end
   end
   
