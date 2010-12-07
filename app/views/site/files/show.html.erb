@@ -12,6 +12,12 @@
     </ul>
   </div>
 </div>
+
+<div style="margin-left:20px; float:left;">
+  <ul style="list-style: none outside none;">
+    <%= render :partial => "shared/simillar_file", :collection => @similar_files %>
+  </ul>
+</div>
 <div style="clear:both;"></div>
 <% unless @uploaded_file.catalog.nil? %>
 <div style="margin:10px 0;">

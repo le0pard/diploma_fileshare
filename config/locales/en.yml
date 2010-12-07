@@ -162,7 +162,9 @@ en:
         %{password_reset_url}
         If the above URL does not work try copying and pasting it into your browser.
         If you continue to have problem please feel free to contact us.
-        
+
+  similar_files:
+    percent: Percent   
 # validation messages
   activerecord:
     errors:

@@ -1,0 +1,7 @@
+<li>
+  <% link_to image_link_path(:id => simillar_file.id, :slug => simillar_file.slug) do %>
+  <%= simillar_file.title%>
+  <%= image_tag simillar_file.attachment.url(:thumb), :alt => simillar_file.title, :title => simillar_file.title %>
+  <p><%=t("similar_files.percent")%>: <%= simillar_file.try(:simillar_percentes)%> &#37; </p>
+  <% end %>
+</li>

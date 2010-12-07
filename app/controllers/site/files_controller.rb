@@ -22,6 +22,7 @@ class Site::FilesController < Site::BaseController
   def show
     @uploaded_file = UploadedFile.find_by_id_and_slug(params[:id], params[:slug])
     redirect_to root_path if @uploaded_file.nil?
+    @similar_files = @uploaded_file.get_simillar(70)
   end
   
   def search
