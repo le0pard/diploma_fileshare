@@ -51,7 +51,7 @@ class UploadedFile < ActiveRecord::Base
     # attributes
     has user_id, catalog_id, created_at, updated_at, attachment_updated_at
     
-    where "is_public = 1"
+    where "is_public = true"
   end
   
   scope :account, lambda { 
