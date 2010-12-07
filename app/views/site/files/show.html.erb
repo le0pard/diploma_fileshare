@@ -38,7 +38,7 @@
   <%=simple_format(@uploaded_file.description)%>
 </div>
 
-<% if !@uploaded_file.user.nil? && current_user && current_user == @uploaded_file.user %>
+<% if !@uploaded_file.user.nil? && current_user && current_user.id == @uploaded_file.user.id %>
   <% content_for :bottom do %>
   <script type="text/javascript">
   $(document).ready(function(){

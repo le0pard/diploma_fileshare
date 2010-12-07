@@ -24,7 +24,7 @@ class Site::FilesController < Site::BaseController
   
   def update
     @uploaded_file = UploadedFile.find_by_id(params[:id])
-    if @uploaded_file && @uploaded_file.user == current_user
+    if @uploaded_file && current_user && @uploaded_file.user.id == current_user.id
       if params[:update_value]
         @uploaded_file.update_attributes({:description => params[:update_value]})
       end
