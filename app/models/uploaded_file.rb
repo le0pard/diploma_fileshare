@@ -77,7 +77,7 @@ class UploadedFile < ActiveRecord::Base
   def get_simillar(percent, own_limit = 10)
     own_where = "round((icount(uploaded_files.diff_array::int[] & '#{self.diff_array}'::int[])::numeric / ((icount(uploaded_files.diff_array::int[]) + icount('#{self.diff_array}'::int[])) / 2)::numeric) * 100, 2)"
     UploadedFile.select("uploaded_files.*, #{own_where} AS simillar_percentes").
-      where(["#{own_where} >= ? AND id != ?", percent, self.id]).limit(own_limit)
+      where(["#{own_where} >= ? AND id != ?", percent, self.id]).order(own_where + " DESC").limit(own_limit)
   end
   
   protected
