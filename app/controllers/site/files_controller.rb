@@ -1,11 +1,14 @@
 class Site::FilesController < Site::BaseController
   
-  before_filter :require_user, :only => [:create]
-  cache_sweeper :upload_file_sweeper, :only => [:create]
+  before_filter :require_user, :only => [:new, :create]
+  cache_sweeper :upload_file_sweeper, :only => [:create, :update]
   
   def index
-    @uploaded_file = UploadedFile.new
     @uploaded_files = UploadedFile.published.limit("30").all
+  end
+  
+  def new
+    @uploaded_file = UploadedFile.new
   end
   
   def create
@@ -15,7 +18,20 @@ class Site::FilesController < Site::BaseController
       flash[:notice] = I18n.t("flash.upload_notice")
       redirect_to image_link_path(:id => @uploaded_file.id, :slug => @uploaded_file.slug)
     else
-      render :action => :index
+      render :action => :new
+    end
+  end
+  
+  def update
+    @uploaded_file = UploadedFile.find_by_id(params[:id])
+    if @uploaded_file && @uploaded_file.user == current_user
+      if params[:update_value]
+        @uploaded_file.update_attributes({:description => params[:update_value]})
+      end
+    end
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js { render :text => text_helper.simple_format(@uploaded_file.description) }
     end
   end
   
@@ -42,4 +58,15 @@ class Site::FilesController < Site::BaseController
     @uploaded_files = UploadedFile.published.by_catalog(@catalog).paginate :page => (params[:page] || 1), :per_page => 60
   end
   
+  private
+  
+  def text_helper
+    Helper.instance
+  end
+  
+end
+
+class Helper
+    include Singleton
+    include ActionView::Helpers
 end

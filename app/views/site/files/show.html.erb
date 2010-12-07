@@ -24,12 +24,36 @@
   <%=t("texts.catalog_title")%>: <%= link_to @uploaded_file.catalog.title, catalog_link_path(:id => @uploaded_file.catalog.id, :slug => @uploaded_file.catalog.slug) %>
 </div>
 <% end %>
+<% unless @uploaded_file.user.nil? %>
+<div style="margin:10px 0;">
+  <%=t("admin.user.attributes.email")%>: <%= mail_to @uploaded_file.user.email, nil, :encode => "hex", :replace_at => "[at]", :replace_dot => "[dot]" %>
+</div>
+<% end %>
 <% unless @uploaded_file.is_public %>
 <div style="margin:10px 0;color:#300;">
   <%=t("texts.private_image")%>
 </div>
 <% end %>
-<div class="image_description">
+<div id="image_description" class="image_description">
   <%=simple_format(@uploaded_file.description)%>
 </div>
+
+<% content_for :bottom do %>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#image_description").editInPlace({
+    url: LessJsRoutes.image_update_path('<%=@uploaded_file.id%>', 'js'),
+    params: "_method=put",
+    bg_over: "#cff",
+    field_type: "textarea",
+    textarea_rows: "15",
+    textarea_cols: "35",
+    show_buttons: true,
+    cancel_button: '<input type="submit" class="inplace_cancel" value="Cancel"></input></div>',
+    save_button: '<div><input type="submit" class="inplace_save" value="Save"></input>'
+  });
+});
+</script>
+<% end %>
+
 <% end %>

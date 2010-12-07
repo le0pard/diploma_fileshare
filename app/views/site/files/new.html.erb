@@ -1,0 +1,44 @@
+<div>
+  <h2><%=t("texts.upload_title")%></h2>
+  <%=form_for @uploaded_file, :url => upload_path, :html => { :multipart => true } do |form|%>
+    <div class="line">
+      <%= form.error_message_on :title %>
+      <%= form.label :title, t("admin.uploaded_file.attributes.title") %>
+      <%= form.text_field :title, :class =>'title' %>
+    </div>
+    <div class="line">
+      <%= form.error_message_on :description %>
+      <%= form.label :description, t("admin.uploaded_file.attributes.description") %>
+      <%= form.text_area :description %>
+    </div>
+    <div class="line">
+      <%= form.error_message_on :attachment_file_name %>
+      <%= form.error_message_on :attachment_content_type %>
+      <%= form.error_message_on :attachment_file_size %>
+      <%= form.label :attachment, t("admin.uploaded_file.attributes.attachment") %>
+      <%= form.file_field :attachment %>
+    </div>
+    <div class="line">
+      <%= form.error_message_on :catalog_id %>
+      <%= form.label :catalog_id, t("admin.uploaded_file.attributes.catalog_title") %>
+      <select id="uploaded_file_parent_id" name="uploaded_file[catalog_id]">
+        <% selected_catalog = nil %>
+        <% selected_catalog = form.object.catalog_id unless form.object.new_record? %>
+        <% Catalog.roots.all.each do |catalog| %>
+          <option value="<%=catalog.id%>" <% if selected_catalog == catalog.id %>selected="selected"<% end %>><%=catalog.title%></option>
+          <%= (render :partial => 'select_options', :collection => catalog.children, :locals => {:selected_catalog => selected_catalog}) unless catalog.children.blank? %>
+        <% end %>
+      </select>
+    </div>
+    <div class="line">
+      <%= form.error_message_on :is_public %>
+      <%= form.label :is_public, t("admin.uploaded_file.attributes.is_public") %>
+      <%= form.check_box :is_public %>
+    </div>
+    <div class="line submit">
+      <%= form.submit t("texts.upload_button") %>
+    </div>
+  <% end %>
+</div>
+
+<div class="divider"></div>

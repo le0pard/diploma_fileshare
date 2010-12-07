@@ -68,6 +68,26 @@ LessJsRoutes = {
     return path.replace(/\.$/m, '');
   },
   
+  // new_admin_user => /admin/users/new(.:format)
+  new_admin_user_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/users/new.' + format + '');},
+  new_admin_user_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/users/new.' + format + ''), verb, params, options);},
+  new_admin_user_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/users/new.' + format + ''), verb, params, options);},
+  
+  // image_update => /update/:id(.:format)
+  image_update_path: function(id, format, verb){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/update/' + id + '.' + format + '');},
+  image_update_ajax: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/update/' + id + '.' + format + ''), verb, params, options);},
+  image_update_ajaxx: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/update/' + id + '.' + format + ''), verb, params, options);},
+  
+  // password_resets => /password_resets(.:format)
+  password_resets_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/password_resets.' + format + '');},
+  password_resets_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/password_resets.' + format + ''), verb, params, options);},
+  password_resets_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/password_resets.' + format + ''), verb, params, options);},
+  
+  // admin_users => /admin/users(.:format)
+  admin_users_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/users.' + format + '');},
+  admin_users_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/users.' + format + ''), verb, params, options);},
+  admin_users_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/users.' + format + ''), verb, params, options);},
+  
   // edit_password_resets => /edit_password_resets/:perishable_token(.:format)
   edit_password_resets_path: function(perishable_token, format, verb){ perishable_token = LessJsRoutes.less_check_parameter(perishable_token);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/edit_password_resets/' + perishable_token + '.' + format + '');},
   edit_password_resets_ajax: function(perishable_token, format, verb, params, options){ perishable_token = LessJsRoutes.less_check_parameter(perishable_token);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/edit_password_resets/' + perishable_token + '.' + format + ''), verb, params, options);},
@@ -118,6 +138,11 @@ LessJsRoutes = {
   tree_admin_catalog_index_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/catalog/tree.' + format + ''), verb, params, options);},
   tree_admin_catalog_index_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/catalog/tree.' + format + ''), verb, params, options);},
   
+  // root => /(.:format)
+  root_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/.' + format + '');},
+  root_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/.' + format + ''), verb, params, options);},
+  root_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/.' + format + ''), verb, params, options);},
+  
   // logout => /logout(.:format)
   logout_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/logout.' + format + '');},
   logout_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/logout.' + format + ''), verb, params, options);},
@@ -143,35 +168,10 @@ LessJsRoutes = {
   new_admin_catalog_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/catalog/new.' + format + ''), verb, params, options);},
   new_admin_catalog_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/catalog/new.' + format + ''), verb, params, options);},
   
-  // root => /(.:format)
-  root_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/.' + format + '');},
-  root_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/.' + format + ''), verb, params, options);},
-  root_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/.' + format + ''), verb, params, options);},
-  
-  // admin_root => /admin(.:format)
-  admin_root_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin.' + format + '');},
-  admin_root_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin.' + format + ''), verb, params, options);},
-  admin_root_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin.' + format + ''), verb, params, options);},
-  
-  // admin_catalog_index => /admin/catalog(.:format)
-  admin_catalog_index_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/catalog.' + format + '');},
-  admin_catalog_index_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/catalog.' + format + ''), verb, params, options);},
-  admin_catalog_index_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/catalog.' + format + ''), verb, params, options);},
-  
   // rails_info_properties => /rails/info/properties(.:format)
   rails_info_properties_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/rails/info/properties.' + format + '');},
   rails_info_properties_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/rails/info/properties.' + format + ''), verb, params, options);},
   rails_info_properties_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/rails/info/properties.' + format + ''), verb, params, options);},
-  
-  // admin_user => /admin/users/:id(.:format)
-  admin_user_path: function(id, format, verb){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/users/' + id + '.' + format + '');},
-  admin_user_ajax: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/users/' + id + '.' + format + ''), verb, params, options);},
-  admin_user_ajaxx: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/users/' + id + '.' + format + ''), verb, params, options);},
-  
-  // move_admin_catalog_index => /admin/catalog/move(.:format)
-  move_admin_catalog_index_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/catalog/move.' + format + '');},
-  move_admin_catalog_index_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/catalog/move.' + format + ''), verb, params, options);},
-  move_admin_catalog_index_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/catalog/move.' + format + ''), verb, params, options);},
   
   // image_link => /image/:id/:slug(.:format)
   image_link_path: function(id, slug, format, verb){ id = LessJsRoutes.less_check_parameter(id);slug = LessJsRoutes.less_check_parameter(slug);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/image/' + id + '/' + slug + '.' + format + '');},
@@ -188,29 +188,34 @@ LessJsRoutes = {
   account_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/account.' + format + ''), verb, params, options);},
   account_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/account.' + format + ''), verb, params, options);},
   
-  // edit_admin_user => /admin/users/:id/edit(.:format)
-  edit_admin_user_path: function(id, format, verb){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/users/' + id + '/edit.' + format + '');},
-  edit_admin_user_ajax: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/users/' + id + '/edit.' + format + ''), verb, params, options);},
-  edit_admin_user_ajaxx: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/users/' + id + '/edit.' + format + ''), verb, params, options);},
+  // admin_root => /admin(.:format)
+  admin_root_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin.' + format + '');},
+  admin_root_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin.' + format + ''), verb, params, options);},
+  admin_root_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin.' + format + ''), verb, params, options);},
   
-  // new_admin_user => /admin/users/new(.:format)
-  new_admin_user_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/users/new.' + format + '');},
-  new_admin_user_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/users/new.' + format + ''), verb, params, options);},
-  new_admin_user_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/users/new.' + format + ''), verb, params, options);},
+  // admin_catalog_index => /admin/catalog(.:format)
+  admin_catalog_index_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/catalog.' + format + '');},
+  admin_catalog_index_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/catalog.' + format + ''), verb, params, options);},
+  admin_catalog_index_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/catalog.' + format + ''), verb, params, options);},
+  
+  // admin_user => /admin/users/:id(.:format)
+  admin_user_path: function(id, format, verb){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/users/' + id + '.' + format + '');},
+  admin_user_ajax: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/users/' + id + '.' + format + ''), verb, params, options);},
+  admin_user_ajaxx: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/users/' + id + '.' + format + ''), verb, params, options);},
+  
+  // move_admin_catalog_index => /admin/catalog/move(.:format)
+  move_admin_catalog_index_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/catalog/move.' + format + '');},
+  move_admin_catalog_index_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/catalog/move.' + format + ''), verb, params, options);},
+  move_admin_catalog_index_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/catalog/move.' + format + ''), verb, params, options);},
   
   // search => /search(.:format)
   search_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/search.' + format + '');},
   search_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/search.' + format + ''), verb, params, options);},
   search_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/search.' + format + ''), verb, params, options);},
   
-  // password_resets => /password_resets(.:format)
-  password_resets_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/password_resets.' + format + '');},
-  password_resets_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/password_resets.' + format + ''), verb, params, options);},
-  password_resets_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/password_resets.' + format + ''), verb, params, options);},
-  
-  // admin_users => /admin/users(.:format)
-  admin_users_path: function(format, verb){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/users.' + format + '');},
-  admin_users_ajax: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/users.' + format + ''), verb, params, options);},
-  admin_users_ajaxx: function(format, verb, params, options){ format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/users.' + format + ''), verb, params, options);},
+  // edit_admin_user => /admin/users/:id/edit(.:format)
+  edit_admin_user_path: function(id, format, verb){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_check_path('/admin/users/' + id + '/edit.' + format + '');},
+  edit_admin_user_ajax: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajax(LessJsRoutes.less_check_path('/admin/users/' + id + '/edit.' + format + ''), verb, params, options);},
+  edit_admin_user_ajaxx: function(id, format, verb, params, options){ id = LessJsRoutes.less_check_parameter(id);format = LessJsRoutes.less_check_parameter(format); return LessJsRoutes.less_ajaxx(LessJsRoutes.less_check_path('/admin/users/' + id + '/edit.' + format + ''), verb, params, options);},
 
 }

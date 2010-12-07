@@ -36,6 +36,7 @@
         <file name="jquery-ui-1.8.5.custom.min.js" />
         <file name="jquery.cookie.js" />
         <file name="jquery.infinitescroll.min.js" />
+        <file name="jquery.editinplace.js" />
       </filelist>
     </concat>
 	</target>
