@@ -41,7 +41,7 @@ class ImageDiff
     
     main_array = res_array1 & res_array2
     
-    return sprintf('%.6f', (main_array.length.to_f / ((res_array1.length.to_f + res_array2.length.to_f) / 2)))
+    return sprintf('%.6f', (main_array.length.to_f / (MATRIX * MATRIX)))
   end
   
 end
